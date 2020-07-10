@@ -1,5 +1,5 @@
 use v6.c;
-unit class Game::Covid19:ver<0.0.1>:auth<cpan:ELIZABETH>;
+unit class Game::Covid19:ver<0.0.2>:auth<cpan:ELIZABETH>;
 
 sub play(
   Int:D :$age!,                # your age
@@ -22,7 +22,7 @@ sub play(
 
             $state = (1..100).roll + $age;
             if $state >= 110 {
-                say "You've been put in a ventilator." if $verbose;
+                say "You've been put on a ventilator." if $verbose;
 
                 $state = (1..100).roll + $age;
                 if $state >= 110 {
