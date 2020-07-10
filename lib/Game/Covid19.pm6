@@ -1,5 +1,5 @@
 use v6.c;
-unit class Game::Covid19:ver<0.0.2>:auth<cpan:ELIZABETH>;
+unit class Game::Covid19:ver<0.0.3>:auth<cpan:ELIZABETH>;
 
 sub play(
   Int:D :$age!,                # your age
@@ -15,8 +15,12 @@ sub play(
     if $state >= 120 {
         say "You're seriously ill." if $verbose;
         $health -= (1..6).roll for ^2;
-        $state = (1..100).roll + $age;
+        if $health <= 0 {
+            say "You've died of Covid-19." if $verbose;
+            return 0;
+        }
 
+        $state = (1..100).roll + $age;
         if $state >= 120 {
             say "You're transferred to ICU" if $verbose;
 
@@ -39,13 +43,17 @@ sub play(
     elsif $state >= 60 {
         say "You're moderately ill." if $verbose;
         $health -= (1..4).roll for ^2;
+        if $health <= 0 {
+            say "You've died of Covid-19." if $verbose;
+            return 0;
+        }
 
         $health = min($health + 6, $constitution);
         say "You'll need 6 weeks for recovery." if $verbose;
     }
 
     else {
-        say "You do not show any symptoms.";
+        say "You do not show any symptoms." if $verbose;
         my $infecting = (1..6).roll + (1..6).roll;
 
         if $mask {
@@ -88,6 +96,18 @@ sub infecting($infecting) {
         !! "You will infect $infecting people.";
 }
 
+sub death-rate(
+  :$times = 10000,   # the number of times to play the game
+  :$verbose = True,  # whether to tell the result
+  |c,                # parameters to play routine
+) is export {
+    my $died = 0;
+    ++$died if play(:!verbose, |c) == 0 for ^$times;
+    my $death-rate = 100 * ($died / $times);
+    say $death-rate.fmt("The death-rate is %.2f%%.") if $verbose;
+    $death-rate
+}
+
 =begin pod
 
 =head1 NAME
@@ -104,6 +124,8 @@ play(age => 64);  # must specify age
 
 play(age => 34, :mask, :distancing);
 
+death-rate(age => 64);
+
 =end code
 
 =head1 DESCRIPTION
@@ -113,7 +135,7 @@ CDC data and was posted by Stephen Richard Watson at:
 
     https://www.facebook.com/photo.php?fbid=10163856786525537&set=gm.1155683021483491&type=3&theater
 
-It exports a single sub called C<play>.
+It exports a two subroutines: C<play> and C<death-rate>.
 
 =head1 SUBROUTINES
 
@@ -152,6 +174,23 @@ to C<False>.
 
 A Boolean indicating whether verbose play output is wanted.  Defaults to
 C<True>.
+
+=head2 death-rate
+
+  death-rate(age => 64);
+
+The C<death-rate> sub will run the game many times and record how many times
+the game resulted in death, and use that to calculate a death-rate as a
+percentage.
+
+It takes the same named parameters as the C<play> subroutine.  Additional
+named parameters are:
+
+=item times
+
+  times => 10000
+
+The number of times the game should be played.  Defaults to 10000.
 
 =head1 AUTHOR
 

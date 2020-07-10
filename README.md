@@ -12,6 +12,8 @@ use Game::Covid::19;
 play(age => 64);  # must specify age
 
 play(age => 34, :mask, :distancing);
+
+death-rate(age => 64);
 ```
 
 DESCRIPTION
@@ -21,7 +23,7 @@ Game::Covid19 is an implementation of a DND-type game that is based on CDC data 
 
     https://www.facebook.com/photo.php?fbid=10163856786525537&set=gm.1155683021483491&type=3&theater
 
-It exports a single sub called `play`.
+It exports a two subroutines: `play` and `death-rate`.
 
 SUBROUTINES
 ===========
@@ -56,6 +58,21 @@ A Boolean indicating whether or not you're socially distancing. Defaults to `Fal
     :!verbose
 
 A Boolean indicating whether verbose play output is wanted. Defaults to `True`.
+
+death-rate
+----------
+
+    death-rate(age => 64);
+
+The `death-rate` sub will run the game many times and record how many times the game resulted in death, and use that to calculate a death-rate as a percentage.
+
+It takes the same named parameters as the `play` subroutine. Additional named parameters are:
+
+  * times
+
+    times => 10000
+
+The number of times the game should be played. Defaults to 10000.
 
 AUTHOR
 ======

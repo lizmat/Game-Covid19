@@ -2,8 +2,12 @@ Revision history for Game-Covid19
 
 {{$NEXT}}
 
+0.0.3  2020-07-10T21:39:26+02:00
+    - Fixed one missing "if $verbose".
+    - Added support and documentation for "death-rate".§
+
 0.0.2  2020-07-10T13:57:40+02:00
     - "on a ventilator", not "in a ventilator".
 
 0.0.1  2020-07-10T13:48:18+02:00
-    - Initial version
+    - Initial version.
