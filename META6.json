@@ -1,0 +1,23 @@
+{
+  "auth" : "cpan:ELIZABETH",
+  "authors" : [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends" : [ ],
+  "depends" : [ ],
+  "description" : "Play the COVID-19 game",
+  "license" : "Artistic-2.0",
+  "name" : "Game::Covid19",
+  "perl" : "6.c",
+  "provides" : {
+    "Random::Covid::19" : "lib/Random/Covid/19.pm6"
+  },
+  "resources" : [ ],
+  "source-url" : "https://github.com/lizmat/Game-Covid19.git",
+  "tags" : [
+    "GAME",
+    "COVID19"
+  ],
+  "test-depends" : [ ],
+  "version" : "0.0.1"
+}
