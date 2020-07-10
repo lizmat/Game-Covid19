@@ -10,7 +10,7 @@
   "name" : "Game::Covid19",
   "perl" : "6.c",
   "provides" : {
-    "Random::Covid::19" : "lib/Random/Covid/19.pm6"
+    "Game::Covid19" : "lib/Game/Covid19.pm6"
   },
   "resources" : [ ],
   "source-url" : "https://github.com/lizmat/Game-Covid19.git",
