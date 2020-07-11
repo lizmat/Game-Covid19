@@ -7,7 +7,7 @@ SYNOPSIS
 ========
 
 ```raku
-use Game::Covid::19;
+use Game::Covid19;
 
 play(age => 64);  # must specify age
 
