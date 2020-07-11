@@ -1,5 +1,5 @@
 use v6.c;
-unit class Game::Covid19:ver<0.0.3>:auth<cpan:ELIZABETH>;
+unit class Game::Covid19:ver<0.0.4>:auth<cpan:ELIZABETH>;
 
 sub play(
   Int:D :$age!,                # your age
@@ -118,7 +118,7 @@ Game::Covid19 - Play the COVID-19 game
 
 =begin code :lang<raku>
 
-use Game::Covid::19;
+use Game::Covid19;
 
 play(age => 64);  # must specify age
 
@@ -135,7 +135,7 @@ CDC data and was posted by Stephen Richard Watson at:
 
     https://www.facebook.com/photo.php?fbid=10163856786525537&set=gm.1155683021483491&type=3&theater
 
-It exports a two subroutines: C<play> and C<death-rate>.
+It exports two subroutines: C<play> and C<death-rate>.
 
 =head1 SUBROUTINES
 

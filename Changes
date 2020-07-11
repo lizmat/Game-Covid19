@@ -2,6 +2,9 @@ Revision history for Game-Covid19
 
 {{$NEXT}}
 
+0.0.4  2020-07-11T10:39:34+02:00
+    - Fix spello's, Paul Cochrane++
+
 0.0.3  2020-07-10T21:39:26+02:00
     - Fixed one missing "if $verbose".
     - Added support and documentation for "death-rate".§
