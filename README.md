@@ -23,7 +23,7 @@ Game::Covid19 is an implementation of a DND-type game that is based on CDC data 
 
     https://www.facebook.com/photo.php?fbid=10163856786525537&set=gm.1155683021483491&type=3&theater
 
-It exports a two subroutines: `play` and `death-rate`.
+It exports two subroutines: `play` and `death-rate`.
 
 SUBROUTINES
 ===========
