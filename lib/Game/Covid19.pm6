@@ -1,5 +1,5 @@
 use v6.c;
-unit class Game::Covid19:ver<0.0.4>:auth<cpan:ELIZABETH>;
+unit class Game::Covid19:ver<0.0.5>:auth<cpan:ELIZABETH>;
 
 sub play(
   Int:D :$age!,                # your age
@@ -34,10 +34,10 @@ sub play(
                     return 0;
                 }
             }
-
-            $health = min($health + 6, $constitution);
-            say "You'll need 6 months for recovery" if $verbose;
         }
+
+        $health = min($health + 6, $constitution);
+        say "You'll need 6 months for recovery" if $verbose;
     }
 
     elsif $state >= 60 {
