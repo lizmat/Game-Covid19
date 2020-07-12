@@ -22,7 +22,7 @@ sub play(
 
         $state = (1..100).roll + $age;
         if $state >= 120 {
-            say "You're transferred to ICU" if $verbose;
+            say "You're transferred to ICU." if $verbose;
 
             $state = (1..100).roll + $age;
             if $state >= 110 {
@@ -37,7 +37,7 @@ sub play(
         }
 
         $health = min($health + 6, $constitution);
-        say "You'll need 6 months for recovery" if $verbose;
+        say "You'll need 6 months for recovery." if $verbose;
     }
 
     elsif $state >= 60 {
