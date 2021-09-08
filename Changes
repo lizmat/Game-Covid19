@@ -2,6 +2,12 @@ Revision history for Game-Covid19
 
 {{$NEXT}}
 
+0.0.6  2021-09-08T13:43:51+02:00
+    - Change file extension to .rakumod
+    - Migrate to zef ecosystem
+    - Update email address
+    - Update copyright year
+
 0.0.5  2020-07-12T12:15:52+02:00
     - If you're seriously ill, you'll always need 6 months for recovery.
 

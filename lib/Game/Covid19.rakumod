@@ -1,5 +1,5 @@
-use v6.c;
-unit class Game::Covid19:ver<0.0.5>:auth<cpan:ELIZABETH>;
+use v6.d;
+unit class Game::Covid19:ver<0.0.6>:auth<zef:lizmat>;
 
 sub play(
   Int:D :$age!,                # your age
@@ -194,14 +194,14 @@ The number of times the game should be played.  Defaults to 10000.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Game-Covid19 . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020 Elizabeth Mattijsen
+Copyright 2020, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under
 the Artistic License 2.0.
