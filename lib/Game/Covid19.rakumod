@@ -1,7 +1,4 @@
-use v6.d;
-unit class Game::Covid19:ver<0.0.6>:auth<zef:lizmat>;
-
-sub play(
+my sub play(
   Int:D :$age!,                # your age
   Int:D :$constitution = 100,  # your initial constitution
   Bool  :$mask,                # are you wearing a mask?
@@ -88,7 +85,7 @@ sub play(
     $health
 }
 
-sub infecting($infecting) {
+my sub infecting($infecting) {
     $infecting <= 0
       ?? "You will not infect anybody."
       !! $infecting == 1
@@ -96,7 +93,7 @@ sub infecting($infecting) {
         !! "You will infect $infecting people.";
 }
 
-sub death-rate(
+my sub death-rate(
   :$times = 10000,   # the number of times to play the game
   :$verbose = True,  # whether to tell the result
   |c,                # parameters to play routine
