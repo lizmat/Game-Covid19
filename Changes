@@ -2,6 +2,12 @@ Revision history for Game-Covid19
 
 {{$NEXT}}
 
+0.0.8  2024-06-24T21:43:26+02:00
+    - Modernize test file extensionn
+    - Modernize pod
+    - Add sponsor link and button
+    - Update copyright year
+
 0.0.7  2021-11-07T12:45:11+01:00
     - Remove module statement, it isn't necessary anymore
 

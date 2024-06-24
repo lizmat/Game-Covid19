@@ -138,43 +138,67 @@ It exports two subroutines: C<play> and C<death-rate>.
 
 =head2 play
 
-  play(age => 64);
+=begin code :lang<raku>
+
+play(age => 64);
+
+=end code
 
 The C<play> subroutine will play the game.  You need to at least specify
 the C<age> named parameter.  It will return your final constitution, with
 C<0> indicating death.  The following named parameters are optional:
 
-=item constitution
+=head3 constitution
+
+=begin code :lang<raku>
 
   constitution => 80,
+
+=end code
 
 A value of 1..100 indicating the state of your constitution, with C<100>
 indicating fully healthy.  Defaults to C<100>.
 
-=item mask
+=head3 mask
+
+=begin code :lang<raku>
 
   :mask
+
+=end code
 
 A Boolean indicating whether or not you're wearing a mask.  Defaults to
 C<False>.
 
-=item distancing
+=head3 distancing
+
+=begin code :lang<raku>
 
   :distancing
+
+=end code
 
 A Boolean indicating whether or not you're socially distancing.  Defaults
 to C<False>.
 
-=item verbose
+=head3 verbose
+
+=begin code :lang<raku>
 
   :!verbose
+
+=end code
 
 A Boolean indicating whether verbose play output is wanted.  Defaults to
 C<True>.
 
 =head2 death-rate
 
+=begin code :lang<raku>
+
   death-rate(age => 64);
+
+=end code
 
 The C<death-rate> sub will run the game many times and record how many times
 the game resulted in death, and use that to calculate a death-rate as a
@@ -183,9 +207,13 @@ percentage.
 It takes the same named parameters as the C<play> subroutine.  Additional
 named parameters are:
 
-=item times
+=head3 times
+
+=begin code :lang<raku>
 
   times => 10000
+
+=end code
 
 The number of times the game should be played.  Defaults to 10000.
 
@@ -196,9 +224,13 @@ Elizabeth Mattijsen <liz@raku.rocks>
 Source can be located at: https://github.com/lizmat/Game-Covid19 . Comments and
 Pull Requests are welcome.
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020, 2021 Elizabeth Mattijsen
+Copyright 2020, 2021, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under
 the Artistic License 2.0.
